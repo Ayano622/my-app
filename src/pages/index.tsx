@@ -10,9 +10,10 @@ export default function Home() {
       <div className="">
         <div style={{ display: "flex" }}>
           <Sidebar></Sidebar>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", paddingRight: '140px' }}>
             <MenuCard id={1} name="cake1" image="image1"></MenuCard>
             <MenuCard id={2} name="cake2" image="image1"></MenuCard>
+            <MenuCard id={3} name="cake3" image="image1"></MenuCard>
             <MenuCard id={3} name="cake3" image="image1"></MenuCard>
           </div>
         </div>

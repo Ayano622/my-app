@@ -1,0 +1,12 @@
+.title {
+    white-space: nowrap; /* テキストを折り返さない */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* 必要なら「…」で省略 */
+    max-width: 100%; /* 幅が狭くなったら影響を受ける */
+  }
+  
+  @media (max-width: 300px) { /* 300px以下のとき非表示 */
+    .hidden-on-wrap {
+      display: none;
+    }
+  }

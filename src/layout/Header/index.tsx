@@ -3,6 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import CakeIcon from "@mui/icons-material/Cake";
 import { SearchBar } from '@/components/SearchBar';
+import styles from './styles.module.css'
 
 export const Header = () => {
 
@@ -13,6 +14,7 @@ export const Header = () => {
   const loginOnClick = () => {
     router.push('/login')
   }
+
   return (
     <header>
         <div style={{ height: "100px", display: "flex", alignItems: "center" }}>
@@ -20,6 +22,7 @@ export const Header = () => {
             <CakeIcon sx={{size: '48px', color: 'pink'}}></CakeIcon>
           </IconButton>
           <Typography
+          className={styles.title}
             color="#dcc6b9"
             sx={{ margin: "auto", fontSize: "32px", fontFamily: "Roboto" }}
             onClick={logoOnClick}

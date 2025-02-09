@@ -1,5 +1,5 @@
 "use client";
-import { Search } from "@/features/Search/components";
+import { Recipe} from "@/features/Recipe/components";
 import { Header } from "@/layout/Header";
 import React from "react";
 
@@ -7,7 +7,7 @@ export default function SearchPage() {
   return (
     <div>
       <Header />
-      <Search></Search>
+    <Recipe id ={1}></Recipe>
     </div>
   );
 }
