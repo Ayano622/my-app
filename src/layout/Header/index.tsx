@@ -1,4 +1,4 @@
-import { Button, IconButton, Typography } from '@mui/material'
+import { Button, IconButton, Tab, Typography } from '@mui/material'
 import React from 'react'
 import { useRouter } from 'next/router'
 import CakeIcon from "@mui/icons-material/Cake";
@@ -14,6 +14,9 @@ export const Header = () => {
   const loginOnClick = () => {
     router.push('/login')
   }
+  const askAIOnClick =() => {
+    router.push('/ask')
+}
 
   return (
     <header>
@@ -38,6 +41,21 @@ export const Header = () => {
           >
             Login
           </Button>
+          
+        </div>
+        <div>
+          <Tab label="レシピ検索"
+          onClick={askAIOnClick}>
+            
+          </Tab>
+          <Tab label="レシピ">
+            
+          </Tab>
+          <Tab label="器具">
+           
+          </Tab>
+          <Tab label="コラム">
+          </Tab>
         </div>
       </header>
   )

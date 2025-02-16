@@ -1,0 +1,47 @@
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #f4d35e;
+  }
+  
+  .recipe-content {
+    padding: 16px;
+    background-color: white;
+  }
+  
+  .recipe-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .recipe-description {
+    color: #555;
+  }
+  
+  /* 📌 レスポンシブ対応 */
+  @media (min-width: 600px) {
+    .recipe-card {
+      flex-direction: row;
+    }
+  
+    .recipe-image {
+      width: 40%;
+      height: auto;
+    }
+  
+    .recipe-content {
+      width: 60%;
+    }
+  }
+  

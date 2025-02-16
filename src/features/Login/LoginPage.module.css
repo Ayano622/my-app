@@ -1,0 +1,77 @@
+/* 全体の背景色を変更 */
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+    background-color: white; /* ベージュ系カラー */
+  }
+  
+  /* ログインカード（フォームの背景） */
+  .loginCard {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px; /* 角丸 */
+    background: white;
+  }
+  
+  /* タイトル */
+  .title {
+    margin-bottom: 16px;
+    color: #5c4b51; /* 落ち着いたブラウン系 */
+  }
+  
+  /* 入力フィールドのカスタマイズ */
+  .inputField {
+    border-radius: 12px !important;
+  }
+  
+  /* ボタンのスタイル */
+  .loginButton {
+    margin-top: 16px;
+    border-radius: 12px !important;
+    background-color: #5c4b51 !important; /* 落ち着いたブラウン */
+    color: white !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+  }
+  
+  .loginButton:hover {
+    background-color: #7d5a5a !important; /* 少し明るめ */
+  }
+  
+  /* リンク部分 */
+  .links {
+    margin-top: 12px;
+    text-align: center;
+  }
+  
+  .forgotPassword a {
+    color: #5c4b51;
+    text-decoration: none;
+  }
+  
+  .links a {
+    color: #5c4b51;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .googleButton {
+    margin-top: 12px;
+    border-radius: 12px;
+    border: 2px solid #5c4b51 !important; /* 落ち着いたブラウンのボーダー */
+    color: #5c4b51 !important;
+    font-weight: bold;
+    background-color: white !important;
+    transition: 0.3s;
+  }
+  
+  .googleButton:hover {
+    background-color: #dcc6b9 !important; /* 基調カラーに変更 */
+    border-color: #7d5a5a !important;
+    color: #7d5a5a !important;
+  }
