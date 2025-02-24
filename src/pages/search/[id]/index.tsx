@@ -7,7 +7,7 @@ export default function SearchPage() {
   return (
     <div>
       <Header />
-    <Recipe id ={1}></Recipe>
+    <Recipe></Recipe>
     </div>
   );
 }

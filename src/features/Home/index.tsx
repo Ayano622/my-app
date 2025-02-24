@@ -11,12 +11,15 @@ export const Home = () => {
   return (
     <div className="">
       <div >
-       
-        <div style={{ display: "flex", paddingRight: "140px" }}>
-          <MenuCard id={1} name="cake1" image="image1"></MenuCard>
-          <MenuCard id={2} name="cake2" image="image1"></MenuCard>
-          <MenuCard id={3} name="cake3" image="image1"></MenuCard>
-          <MenuCard id={3} name="cake3" image="image1"></MenuCard>
+        <div style={{ display: "flex", justifyContent: 'center', flexWrap: "wrap"}}>
+          <MenuCard id={1} name="cake1" image="https://img.spoonacular.com/recipes/637016-312x231.jpg"></MenuCard>
+          <MenuCard id={2} name="cake2" image=""></MenuCard>
+          <MenuCard id={3} name="cake3" image=""></MenuCard>
+          <MenuCard id={3} name="cake3" image=""></MenuCard>
+          <MenuCard id={3} name="cake3" image=""></MenuCard>
+          <MenuCard id={3} name="cake3" image=""></MenuCard>
+          <MenuCard id={3} name="cake3" image=""></MenuCard>
+          <MenuCard id={3} name="cake3" image=""></MenuCard>
         </div>
       </div>
     </div>

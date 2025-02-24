@@ -1,3 +1,5 @@
+import { SetStateAction } from "react"
+
 export type ResultRecipeType = {
     id: number,
     image: string,
@@ -7,7 +9,11 @@ export type ResultRecipeType = {
 
 export const initialResultRecipe = {
     id: 1,
-    image: 'aaa',
+    image: 'https://img.spoonacular.com/recipes/637016-312x231.jpg',
     imageType: 'aaa',
     title: 'aaa'
-,}
+}
+
+export type AskPageProps = {
+    setInstructions: React.Dispatch<SetStateAction<string>>
+}

@@ -1,18 +1,45 @@
 import { SearchBar } from "@/components/SearchBar";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React from "react";
-import { initialResultRecipe, ResultRecipeType } from "./types";
+import { ResultRecipeType } from "./types";
+import { MenuCard } from "@/components/MenuCard";
+import { useRouter } from "next/router";
 
 export default function AskPage() {
-  const [searchedRecipes, setSearchedRecipes] =
-    React.useState<ResultRecipeType[]>([initialResultRecipe]);
+  const [searchedRecipes, setSearchedRecipes] = React.useState<
+    ResultRecipeType[]
+  >([]);
+  const [instructions, setInstructions] = React.useState<string>("");
+  const router = useRouter();
+
+  const recipeOnClick = async () => {
+    console.log("click");
+
+    try {
+      const response = await fetch(
+        "https://api.spoonacular.com/recipes/645479/information?apiKey=c86883fa9f3e4929bf53243dda727ef1"
+      );
+      if (!response.ok) {
+        console.log("not fetch");
+      } else {
+        const json = await response.json();
+        setInstructions(String(json));
+        console.log(response);
+        console.log(json.instructions);
+      }
+
+      router.push(`search/{id}`);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const search = async () => {
     // レシピ検索APIの呼び出し
     let data: ResultRecipeType[] = [];
     try {
       const response = await fetch(
-        "https://api.spoonacular.com/recipes/complexSearch?type=dessert&apiKey=c86883fa9f3e4929bf53243dda727ef1"
+        "https://api.spoonacular.com/recipes/complexSearch?type=bread&apiKey=c86883fa9f3e4929bf53243dda727ef1"
       );
       if (!response.ok) {
         throw new Error(`レスポンスステータス:, ${response.status}`);
@@ -23,7 +50,7 @@ export default function AskPage() {
     } catch (error: unknown) {
       console.error("error", error);
     }
-    setSearchedRecipes(data)
+    setSearchedRecipes(data);
     console.log(data);
 
     // LLM検索APIの呼び出し
@@ -32,8 +59,18 @@ export default function AskPage() {
   return (
     <div>
       <div className="ask-header">
-        {/* <div>AIに聞いてみよう</div> */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+          {/* <Typography
+            sx={{
+              fontFamily: "Roboto",
+              fontWeight: "48",
+              fontSize: "20px",
+              color: "#dcc6b9",
+              textAlign: "left",
+            }}
+          >
+            レシピを検索 */}
+          {/* </Typography> */}
           <SearchBar></SearchBar>
           <Button onClick={search}>検索</Button>
         </div>
@@ -42,24 +79,26 @@ export default function AskPage() {
         className="ask-result"
         style={{ textAlign: "center", marginTop: "30px" }}
       >
-        検索結果
-        {
-            searchedRecipes.length !== 1 ?
-            <div>
-            <div className="searchedItems">{searchedRecipes[0].title}</div>
-        <div className="searchedItems1">{searchedRecipes[1].title}</div>
-        <div className="searchedItems2">{searchedRecipes[2].title}</div>
-        <div className="searchedItems3">{searchedRecipes[3].title}</div>
-        <div className="searchedItems4">{searchedRecipes[4].title}</div>
-        <div className="searchedItems5">{searchedRecipes[5].title}</div>
-        <div className="searchedItems6">{searchedRecipes[6].title}</div>
-        <div className="searchedItems7">{searchedRecipes[7].title}</div>
-        <div className="searchedItems8">{searchedRecipes[8].title}</div>
-        <div className="searchedItems9">{searchedRecipes[9].title}</div>
-        {/* <div className="searchedItems10">{searchedRecipes[10].title}</div> */}
-        </div> : "a"
-        }
-        
+        <div
+          className="ask-result"
+          style={{
+            textAlign: "center",
+            marginTop: "30px",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {searchedRecipes?.map((recipe: ResultRecipeType) => (
+            <MenuCard
+              key={recipe.id}
+              id={recipe.id}
+              name={recipe.title}
+              image={recipe.image}
+              handleCardOnClick={recipeOnClick}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
 export type RecipePageProps = {
-    id: number
+    id: number,
+    name: string,
+    image: string,
+    instructions: string
+
 }

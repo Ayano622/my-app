@@ -5,7 +5,7 @@ import {useRouter} from 'next/router'
 import { MenuCardProps } from './types'
 
 export const MenuCard: React.FC<MenuCardProps> = (props) => {
-  const {id, name} = props
+  const {id, name, image, handleCardOnClick} = props
   const router = useRouter()
   const cardOnClick = () => {
     // レシピページに遷移
@@ -15,13 +15,13 @@ export const MenuCard: React.FC<MenuCardProps> = (props) => {
   return (
     <Card 
     className={name}
-    sx={{height: '300px', width: '250px', margin: '20px', display: 'flex', justifyContent: 'center'}}>
+    sx={{height: '320px', width: '370px', margin: '20px', display: 'flex', justifyContent: 'center'}}>
         <div>
-          <Box onClick = {cardOnClick}>
+          <Box onClick = {handleCardOnClick}>
           <Image 
-            src="/okashiSumple1.jpeg" // {image} propsにする
+            src={image} // {image} propsにする
             alt={name}
-            width={250}  // 幅（必須）
+            width={350}  // 幅（必須）
             height={250}/>
           </Box>    
         </div>
