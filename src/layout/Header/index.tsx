@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { SearchBar } from "@/components/SearchBar";
 import styles from "./styles.module.css";
-import Drawer from "@mui/material/Drawer";
+import { COMMON } from "@/common/constants";
 
 export const Header = () => {
   const router = useRouter();
@@ -30,12 +30,12 @@ export const Header = () => {
   return (
     <header>
       <div style={{ height: "100px", display: "flex", alignItems: "center" }}>
-        <IconButton
-          onClick={() => menuBtnOnClick()}
+        {/* <IconButton
+          // onClick={}
           sx={{ size: "48px", alignContent: "center", marginLeft: "10px" }}
         >
           <MenuBookIcon></MenuBookIcon>
-        </IconButton>
+        </IconButton> */}
         {/* <Drawer open={sidebarOpen} onClose={drawer}>
           <p>hello</p>
         </Drawer> */}
@@ -45,7 +45,7 @@ export const Header = () => {
           sx={{ margin: "auto", fontSize: "32px", fontFamily: "Roboto" }}
           onClick={logoOnClick}
         >
-          献立提案アプリ
+          {COMMON.HEADER.TITLE}
         </Typography>
         <SearchBar />
         <Button
@@ -77,7 +77,7 @@ export const Header = () => {
         ></Tab>
         <Tab sx={{ margin: "10px 20px auto 20px" }} label="器具"></Tab>
         <Tab sx={{ margin: "10px 20px auto 20px" }} label="コラム"></Tab>
-      </div>
+      </div> 
     </header>
   );
 };
