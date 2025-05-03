@@ -2,13 +2,11 @@ import { SearchBar } from "@/components/SearchBar";
 import { Button, Typography } from "@mui/material";
 import React from "react";
 import { ResultRecipeType } from "./types";
-import { MenuCard } from "@/components/MenuCard";
+import { ItemCard } from "@/components/ItemCard";
 import { useRouter } from "next/router";
 
 export default function AskPage() {
-  const [searchedRecipes, setSearchedRecipes] = React.useState<
-    ResultRecipeType[]
-  >([]);
+  const [searchedRecipes, setSearchedRecipes] = React.useState<[]>([]);
   const [instructions, setInstructions] = React.useState<string>("");
   const router = useRouter();
 
@@ -36,16 +34,20 @@ export default function AskPage() {
 
   const search = async () => {
     // レシピ検索APIの呼び出し
-    let data: ResultRecipeType[] = [];
+    let data: [] = [];
     try {
       const response = await fetch(
-        "https://api.spoonacular.com/recipes/complexSearch?type=bread&apiKey=c86883fa9f3e4929bf53243dda727ef1"
+        "https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?applicationId=1067835499526720282"
       );
       if (!response.ok) {
         throw new Error(`レスポンスステータス:, ${response.status}`);
       } else {
         const json = await response.json();
-        data = json.results;
+      
+        data = json.result
+        console.log(data);
+  
+        
       }
     } catch (error: unknown) {
       console.error("error", error);
@@ -90,7 +92,7 @@ export default function AskPage() {
           }}
         >
           {searchedRecipes?.map((recipe: ResultRecipeType) => (
-            <MenuCard
+            <ItemCard
               key={recipe.id}
               id={recipe.id}
               name={recipe.title}

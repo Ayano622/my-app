@@ -7,7 +7,7 @@ export const Home = () => {
 
 
   const handelItemCardOnClick =() => {
-    router.push("/recipe")
+    // router.push("recipe")
   }
 
   return (
