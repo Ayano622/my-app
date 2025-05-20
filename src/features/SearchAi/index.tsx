@@ -89,12 +89,12 @@ export default function SearchAi() {
             justifyContent: "center",
           }}
         >
-          {searchedRecipes?.map((recipe: ResultRecipeType) => (
+          {searchedRecipes?.map((recipe) => (
             <ItemCard
               key={recipe.id}
               id={recipe.id}
               name={recipe.title}
-              image={recipe.image}
+              image={recipe.foodImageUrl}
               handleCardOnClick={recipeOnClick}
             />
           ))}

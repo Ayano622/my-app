@@ -57,6 +57,10 @@ export default function AskPage() {
 
     // LLM検索APIの呼び出し
   };
+  React.useEffect(() => {
+    console.log(searchedRecipes);
+    
+  },[searchedRecipes])
 
   return (
     <div>
@@ -91,15 +95,15 @@ export default function AskPage() {
             justifyContent: "center",
           }}
         >
-          {searchedRecipes?.map((recipe: ResultRecipeType) => (
+          {/* {searchedRecipes?.map((recipe:any) => (
             <ItemCard
               key={recipe.id}
               id={recipe.id}
               name={recipe.title}
-              image={recipe.image}
+              image={recipe.foodImageUrl}
               handleCardOnClick={recipeOnClick}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
