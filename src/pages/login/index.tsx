@@ -1,5 +1,5 @@
-import { Login } from '@/features/Login'
-import { Header } from '@/layout/Header'
+import { Login } from '../../features/Login'
+import { Header } from '../../layout/Header'
 import React from 'react'
 
 export default function LoginPage () {

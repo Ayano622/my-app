@@ -2,9 +2,10 @@ import { Button, IconButton, Tab, Typography } from "@mui/material";
 import React from "react";
 import { useRouter } from "next/router";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import { SearchBar } from "@/components/SearchBar";
+import { SearchBar } from "../../components/SearchBar";
 import styles from "./styles.module.css";
-import { COMMON } from "@/common/constants";
+import { COMMON } from "../../common/constants";
+import { PostButton } from "../../components/PostButton";
 
 export const Header = () => {
   const router = useRouter();
@@ -42,7 +43,7 @@ export const Header = () => {
         <Typography
           className={styles.title}
           color="#dcc6b9"
-          sx={{ margin: "auto", fontSize: "32px", fontFamily: "Roboto" }}
+          sx={{ margin: "auto", fontSize: "32px", fontFamily: "Roboto", marginLeft: '25px' }}
           onClick={logoOnClick}
         >
           {COMMON.HEADER.TITLE}
@@ -63,21 +64,24 @@ export const Header = () => {
         >
           Login
         </Button>
+        <PostButton />
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Tab
-          label="レシピ検索"
+          label="検索"
           sx={{ margin: "10px 20px auto 20px" }}
           onClick={askAIOnClick}
         ></Tab>
         <Tab
           sx={{ margin: "10px 20px auto 20px" }}
           onClick={menuBtnOnClick}
-          label="レシピAI"
+          label="AI"
         ></Tab>
         <Tab sx={{ margin: "10px 20px auto 20px" }} label="器具"></Tab>
         <Tab sx={{ margin: "10px 20px auto 20px" }} label="コラム"></Tab>
+      
       </div> 
+      
     </header>
   );
 };

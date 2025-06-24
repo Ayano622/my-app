@@ -1,4 +1,4 @@
-import { ItemCard } from "@/components/ItemCard";
+import { ItemCard } from "../../components/ItemCard";
 import React from "react";
 import { useRouter } from "next/router";
 

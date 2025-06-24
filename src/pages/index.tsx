@@ -1,6 +1,6 @@
 "use client";
-import { Home } from "@/features/Home";
-import { Header } from "@/layout/Header";
+import { Home } from "../features/Home";
+import { Header } from "../layout/Header";
 
 // export default function HomePage() {
 //   return (

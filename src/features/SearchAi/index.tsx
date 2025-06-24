@@ -1,8 +1,8 @@
-import { SearchBar } from "@/components/SearchBar";
+import { SearchBar } from "../../components/SearchBar";
 import { Button, Typography } from "@mui/material";
 import React from "react";
 import { ResultRecipeType } from "./types";
-import { ItemCard } from "@/components/ItemCard";
+import { ItemCard } from "../../components/ItemCard";
 import { useRouter } from "next/router";
 
 export default function SearchAi() {
