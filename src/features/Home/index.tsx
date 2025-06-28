@@ -1,6 +1,7 @@
 import { ItemCard } from "../../components/ItemCard";
 import React from "react";
 import { useRouter } from "next/router";
+import { NavigationToMyList } from "@/components/NavigationToMyList";
 
 export const Home = () => {
     const router = useRouter()
@@ -12,6 +13,10 @@ export const Home = () => {
 
   return (
     <div className="">
+      <NavigationToMyList>
+        
+
+      </NavigationToMyList>
       <div >
         <div style={{ display: "flex", justifyContent: 'center', flexWrap: "wrap"}}>
           <ItemCard id={1} name="sumple1" onClick={handelItemCardOnClick()} image="https://img.spoonacular.com/recipes/637016-312x231.jpg"></ItemCard>
