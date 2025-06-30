@@ -1,22 +1,21 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, CardContent, CardMedia, Typography } from "@mui/material";
 import styles from "./styles.module.css"; // module.css をインポート
 import { RecipePageProps } from "./types";
 export const Recipe: React.FC<RecipePageProps> = (props) => {
-  const { id, name, image, instructions } = props
+  const { image, instructions } = props
  
   React.useEffect(() => {
     console.log(instructions);
   },[])
 
   return (
-    <Card className={styles.recipeCard}>
-      {/* 画像エリア */}
-      <CardMedia
+      <Box sx={{margin: "32px"}}>
+        <CardMedia
       
         component="img"
         image={image} // 仮の画像
-        alt="レシピ画像"
+        alt=""
         className={styles.recipeImage}
         width={"100px"}
         height={"100px"}
@@ -24,7 +23,7 @@ export const Recipe: React.FC<RecipePageProps> = (props) => {
       {/* テキストエリア */}
       <CardContent className={styles.recipeContent}>
         <Typography variant="h5" className={styles.recipeTitle}>
-          {name}
+          aaaa
         </Typography>
         <Typography
           variant="body2"
@@ -34,6 +33,7 @@ export const Recipe: React.FC<RecipePageProps> = (props) => {
           {instructions}
         </Typography>
       </CardContent>
-    </Card>
+      </Box>
+    
   );
 };

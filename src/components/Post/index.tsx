@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import "./index.module.css";
 import { useRouter } from "next/navigation";
 
@@ -10,17 +10,23 @@ export const Post = () => {
   return (
     <>
       <div className="post">
-        <Box sx={{ width: "800px", height: "200px", color: "gray" }}>
-          画像を入れる 画像を入れる 画像を入れる
+        <Box sx={{ width: "800px"}}>
+          <Typography>画像</Typography>
+          <Box sx={{ backgroundColor: "grey", height:"200px" }}>
+            
+          </Box>
         </Box>
         <Box sx={{ width: "800px", height: "100px", color: "gray" }}>
-          タイトル
+          <Typography>タイトル</Typography>
+          <TextField></TextField>
         </Box>
         <Box sx={{ width: "800px", height: "100px", color: "gray" }}>
-          キャプション キャプション キャプション
+          <Typography>キャプション</Typography>
+          <TextField></TextField>
         </Box>
-        <Box sx={{ width: "800px", height: "200px", color: "gray" }}>
-          感想 感想 感想
+        <Box sx={{ height: "200px", color: "gray" }}>
+          <Typography>感想</Typography>
+          <TextField></TextField>
         </Box>
         <Button onClick={handleOnClick}>投稿</Button>
       </div>

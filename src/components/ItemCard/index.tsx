@@ -15,9 +15,10 @@ export const ItemCard: React.FC<MenuCardProps> = (props) => {
   return (
     <Card 
     className={name}
+    onClick = {cardOnClick}
     sx={{height: '320px', width: '370px', margin: '20px', display: 'flex', justifyContent: 'center'}}>
         <div>
-          <Box onClick = {cardOnClick}>
+          <Box>
           <Image 
             src={image} // {image} propsにする
             alt={name}
