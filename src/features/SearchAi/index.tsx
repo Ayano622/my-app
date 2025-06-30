@@ -1,5 +1,5 @@
 import { SearchBar } from "../../components/SearchBar";
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { ResultRecipeType } from "./types";
 import { ItemCard } from "../../components/ItemCard";
@@ -59,21 +59,9 @@ export default function SearchAi() {
   return (
     <div>
       <div className="ask-header" >
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
-          <Typography
-            sx={{
-              fontFamily: "Roboto",
-              fontWeight: "48",
-              fontSize: "20px",
-              color: "#dcc6b9",
-              textAlign: "left",
-            }}
-          >
-            AIに聞いてみる
-          </Typography>
-          <SearchBar></SearchBar>
-          <Button onClick={search}>検索</Button>
-        </div>
+        <Box sx={{textAlign: "center", margin: "100px 10px"}}>
+          <Typography>Comming Soon...</Typography>
+        </Box>
       </div>
       <div
         className="ask-result"

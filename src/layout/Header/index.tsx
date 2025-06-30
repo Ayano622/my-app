@@ -15,8 +15,8 @@ export const Header = () => {
   const loginOnClick = () => {
     router.push("/login");
   };
-  const askAIOnClick = () => {
-    router.push("/ask");
+  const toListOnClick = () => {
+    router.push("/list");
   };
   const menuBtnOnClick = () => {
     router.push("/searchAi");
@@ -68,17 +68,16 @@ export const Header = () => {
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Tab
-          label="検索"
-          sx={{ margin: "10px 20px auto 20px" }}
-          onClick={askAIOnClick}
+          label="Records"
+          sx={{ margin: "10px 20px auto 20px", textTransform: "capitalize" }}
+          onClick={toListOnClick}
         ></Tab>
         <Tab
-          sx={{ margin: "10px 20px auto 20px" }}
+          sx={{ margin: "10px 20px auto 20px", textTransform:"capitalize" }}
           onClick={menuBtnOnClick}
-          label="AI"
+          label="Movies"
         ></Tab>
-        <Tab sx={{ margin: "10px 20px auto 20px" }} label="器具"></Tab>
-        <Tab sx={{ margin: "10px 20px auto 20px" }} label="コラム"></Tab>
+        <Tab sx={{ margin: "10px 20px auto 20px", textTransform:"capitalize" }} label= "Books" onClick={menuBtnOnClick}></Tab>
       
       </div> 
       
