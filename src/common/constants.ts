@@ -1,6 +1,6 @@
 export const COMMON = {
   HEADER: {
-    TITLE: "My Movies Redord",
+    TITLE: "My Movies Record",
   },
 };
 
