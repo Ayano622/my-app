@@ -16,6 +16,9 @@ export const Header = () => {
     router.push("/login");
   };
   const toListOnClick = () => {
+    router.push("/moviesList");
+  };
+  const toRecordOnClick = () => {
     router.push("/list");
   };
   const menuBtnOnClick = () => {
@@ -68,9 +71,14 @@ export const Header = () => {
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Tab
-          label="Records"
+          label="List"
           sx={{ margin: "10px 20px auto 20px", textTransform: "capitalize" }}
           onClick={toListOnClick}
+        ></Tab>
+        <Tab
+          label="Records"
+          sx={{ margin: "10px 20px auto 20px", textTransform: "capitalize" }}
+          onClick={toRecordOnClick}
         ></Tab>
         <Tab
           sx={{ margin: "10px 20px auto 20px", textTransform:"capitalize" }}
