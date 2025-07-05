@@ -9,7 +9,7 @@ export const NavigationToMyList = () => {
 
   return (
     <>
-      <Container sx={{textAlign:"center"}}>
+      <Container sx={{textAlign:"center", width: "400px"}}>
         <Paper>
             <Button 
             sx={{width:'200px', height:'200px'}}

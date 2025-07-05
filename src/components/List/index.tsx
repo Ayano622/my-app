@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import { ItemCard } from "../ItemCard";
 import { useRouter } from "next/router";
+import React from "react";
+import { getMoviesList } from "./api";
 
 const exampleList: {index: number, name: string}[] = [
   {index: 1, name: "Titanic", },
@@ -9,6 +11,18 @@ const exampleList: {index: number, name: string}[] = [
 ]
 
 export const List = () => {
+  let data: any[] = []
+  React.useEffect(() => {
+  getMoviesList().then((result) => {
+    console.log(result);
+    console.log(result.results);
+    data.push(result.results[0])
+    // for(const i of result.results) {
+    //   data.push(i)
+    // }
+  })
+  console.log(data);
+},[])
   const router = useRouter()
   const handleCardOnClick = (index:number) => {
     router.push(`search/${index}/`)

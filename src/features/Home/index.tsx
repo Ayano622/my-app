@@ -2,6 +2,8 @@ import { ItemCard } from "../../components/ItemCard";
 import React from "react";
 import { useRouter } from "next/router";
 import { NavigationToMyList } from "@/components/NavigationToMyList";
+import { InputText } from "@/uiParts/inputText";
+import { Box } from "@mui/material";
 
 export const Home = () => {
     const router = useRouter()
@@ -12,15 +14,14 @@ export const Home = () => {
   }
 
   return (
-    <div className="">
-      <NavigationToMyList>
-
-
-      </NavigationToMyList>
+    <Box className="" sx={{textAlign: "center", margin: "50px"}}>
+      <InputText sx={{width: "800px"}}></InputText>
       <div >
-        <div style={{ display: "flex", justifyContent: 'center', flexWrap: "wrap"}}>
+        <div style={{ justifyContent: 'center', margin: "50px"}}>
+          {/* <NavigationToMyList>
+      </NavigationToMyList> */}
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
