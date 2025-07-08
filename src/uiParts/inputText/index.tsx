@@ -3,6 +3,10 @@ import { Props } from "./type";
 import { FC } from "react";
 
 export const InputText: FC<Props> = (props: Props) => {
+  const {setOpen} = props
+  const handleButtonClick = () => {
+    setOpen(true)
+  }
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <Box>
@@ -28,7 +32,7 @@ export const InputText: FC<Props> = (props: Props) => {
                paddingBottom: "30px"
             }}
           />
-          <Button sx={{ position: "absolute", bottom: 16, right: 16 }}>
+          <Button sx={{ position: "absolute", bottom: 16, right: 16 }} onClick={handleButtonClick}>
             ⇧
           </Button>
         </Box>

@@ -4,4 +4,5 @@ import { ReactNode } from 'react'
 export type Props = {
   children?: ReactNode
   sx?: SxProps<Theme>
-}
+  setOpen: React.Dispatch<boolean>
+ }

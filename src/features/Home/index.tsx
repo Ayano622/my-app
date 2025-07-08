@@ -4,18 +4,18 @@ import { useRouter } from "next/router";
 import { NavigationToMyList } from "@/components/NavigationToMyList";
 import { InputText } from "@/uiParts/inputText";
 import { Box } from "@mui/material";
+import { LoadingDialog } from "@/components/LoadingDialog";
 
 export const Home = () => {
-    const router = useRouter()
+  const router = useRouter()
+  const [dialogOpen, setDialogOpen] = React.useState<boolean>(false)
 
-
-  const handelItemCardOnClick =() => {
-    // router.push("recipe")
-  }
+  
 
   return (
     <Box className="" sx={{textAlign: "center", margin: "50px"}}>
-      <InputText sx={{width: "800px"}}></InputText>
+      <InputText sx={{width: "800px"}} setOpen={setDialogOpen} ></InputText>
+      <LoadingDialog open={dialogOpen} setOpen={setDialogOpen} ></LoadingDialog>
       <div >
         <div style={{ justifyContent: 'center', margin: "50px"}}>
           {/* <NavigationToMyList>
