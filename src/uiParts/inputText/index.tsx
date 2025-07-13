@@ -22,7 +22,7 @@ export const InputText: FC<Props> = (props: Props) => {
             id="outlined-basic"
             variant="outlined"
             multiline
-            rows={2}
+            rows={1}
             sx={{
               width: "800px",
               fieldset: {
