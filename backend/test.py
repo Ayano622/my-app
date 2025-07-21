@@ -32,8 +32,3 @@ def scrape_reviews(movie_id="95369", page=1):
             continue
 
     return reviews
-
-if __name__ == "__main__":
-    results = scrape_reviews(movie_id="95369", page=1)
-    for i, item in enumerate(results):
-        print(f"\n--- Review {i+1} ---\n{item['body']}")
